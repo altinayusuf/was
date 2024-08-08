@@ -1,0 +1,611 @@
+  @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+  @font-face {
+      font-family: olymia;
+      src: url('icerikler/fonts/Olymia.otf');
+  }
+
+  @font-face {
+      font-family: Rokiest-Regular;
+      src: url('icerikler/fonts/Rokiest-Regular.otf');
+  }
+
+  /* Loader Styles */
+  .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+  }
+
+  .loader-content {
+      position: relative;
+      width: 100px;
+      height: 60px;
+  }
+
+  .cloud-svg {
+      position: absolute;
+      width: 100%;
+      height: auto;
+  }
+
+  .sun-svg {
+      position: absolute;
+      width: 100px;
+      height: auto;
+      top: -50%;
+      left: -30%;
+      transform: translateX(-50%);
+      animation: rotate 1s linear infinite;
+  }
+
+
+  @keyframes rotate {
+      0% {
+          transform: translateX(50px) rotate(0deg);
+      }
+
+      100% {
+          transform: translateX(50px) rotate(-180deg);
+      }
+  }
+
+  /* Hamburger Menu Icon */
+  .menu-toggle {
+      color: #ffffff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+  }
+
+  .menum {
+      margin-top: 100px;
+  }
+
+  .menu-toggle img {
+      position: fixed;
+      margin-left: -10px;
+      margin-top: -10px;
+      width: 60px;
+      height: 60px;
+      background-color: transparent;
+      padding: 10px;
+  }
+
+  footer {
+      border-radius: 50px;
+      padding: 20px;
+
+  }
+
+  footer a {
+      font-family: "Trend Sans W00 One";
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 20px;
+      padding: 10px;
+  }
+
+  footer a:hover {
+      background-color: #ffffff4b;
+      text-decoration: none;
+      color: #ffffff;
+  }
+
+  .menudeki img {
+      width: 200px;
+  }
+
+  /* Side Menu Styles */
+  .side-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      color: white;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      padding: 20px;
+      overflow: auto;
+  }
+
+  .side-menu.open {
+      transform: translateX(0);
+  }
+
+  .menu-close {
+      background: none;
+      border: none;
+      color: rgb(0, 0, 0);
+      font-size: 2em;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+  }
+
+  .menu-toggle img {
+      color: #ffffff;
+  }
+
+  .side-menu ul {
+      list-style-type: none;
+      padding: 0;
+  }
+
+  .side-menu ul li {
+      margin: 15px 0;
+      width: 100%;
+      border-radius: 50px;
+      padding: 10px;
+      text-align: left;
+      padding-left: 55px;
+
+  }
+
+  .side-menu ul a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      font-size: 1.2em;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+  }
+  .side-menu ul a:hover{
+    color: rgb(10, 136, 255);
+  }
+
+  .side-menu ul li:hover {
+      background-color: #88888877;
+      transition: .3s all;
+  }
+
+  .side-menu .isim-icon {
+      position: absolute;
+      margin-left: -25px;
+      margin-top: -1px;
+  }
+
+  .isim-icon {
+      font-size: 18px;
+  }
+
+
+  /* Responsive Styles */
+  @media (min-width: 992px) {
+      .side-menu {
+          width: calc(16.7%);
+          /* Adjust the width to cover bg-left area */
+          transform: translateX(-100%);
+      }
+  }
+
+  @media (max-width: 991px) {
+      .side-menu {
+          width: 100%;
+          height: 100%;
+      }
+  }
+
+
+  html,
+  body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+  }
+
+  .container-fluid {
+      min-height: 100%;
+  }
+
+  .row {
+      height: calc(100% - 0);
+  }
+
+  .bg-left {
+      background: url('images/leftk.svg') no-repeat center;
+      background-size: cover;
+      height: 100vh;
+      /* Tam ekran yüksekliği için değişiklik */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .bg-right {
+      background: url('images/download.gif') center no-repeat;
+      background-size: cover;
+      position: relative;
+  }
+
+  .logo {
+      width: 300px;
+  }
+
+  .weather-info {
+      font-family: "DM Sans", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      width: 90%;
+      color: rgb(0, 0, 0);
+      background: rgba(255, 255, 255, 0.329);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      border: #ccc 1px solid;
+  }
+
+  .weather-info .row {
+      margin-top: 0;
+  }
+
+  .weather-icon {
+      animation: hareket 1s infinite all;
+  }
+
+  .weather-icon img {
+      width: 150px;
+      background-color: rgb(31, 184, 255);
+      border: 1px #000 solid;
+      border-radius: 50%;
+  }
+
+  .anlikbilgi {
+      display: flex;
+      justify-content: center;
+  }
+
+  .weather-temp {
+      border-radius: 50px;
+      font-size: 2em;
+      margin-left: 20px;
+  }
+
+  .weather-col {
+      background: rgba(255, 255, 255, 0.048);
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+      height: auto;
+      text-align: center;
+      transition: .5s;
+      cursor: pointer;
+  }
+
+  .weather-col .tooltip {
+      display: none;
+      /* Varsayılan olarak gizli */
+      position: absolute;
+      top: 100%;
+      /* Hava durumu kutusunun altında */
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 4px;
+      white-space: nowrap;
+      /* Metni sarmadan tek satırda göster */
+      z-index: 10;
+      /* Diğer içeriklerin üstünde olması için */
+  }
+
+  .weather-col:hover .tooltip {
+      display: block;
+      /* Hover yapıldığında görünür */
+  }
+
+  .weather-col:hover {
+      transform: scale(.9);
+      transition: .8s;
+  }
+
+  input.form-control {
+      border-radius: 50px;
+      width: 100%;
+      height: 40px;
+      font-size: 1em;
+      color: #000;
+      border: 1px #000 solid;
+      padding: 0px;
+  }
+
+  .sol {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      width: 100%;
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 50px;
+  }
+
+  .dropdown-menu {
+      max-height: 200px;
+      overflow-y: auto;
+  }
+
+  #cityList {
+      display: none;
+      position: absolute;
+      z-index: 1000;
+      background: white;
+      width: 100%;
+      max-height: 200px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+  }
+
+  #cityList div {
+      padding: 10px;
+      cursor: pointer;
+  }
+
+  #cityList div:hover {
+      background: #f0f0f0;
+  }
+
+  .weather-description {
+      color: #000000;
+      text-transform: lowercase;
+      padding: 10px;
+  }
+
+  .weather-col p {
+      color: black;
+      background-color: rgba(255, 255, 255, 0.623);
+      border-radius: 50px;
+      padding: 10px;
+      width: 150px;
+      font-size: 18px;
+      margin: 5px 0;
+      text-align: end;
+  }
+
+  .icon-container {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+  }
+
+  .icon-container img {
+      background-color: rgb(31, 184, 255);
+      margin: 5px;
+      padding: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+  }
+
+  .weather-col h3 {
+      color: black;
+      background-color: rgba(255, 255, 255, 0.623);
+      border-radius: 50px;
+      padding: 10px;
+      margin: 10px;
+  }
+
+  #currentTemp {
+      text-align: center;
+      border-radius: 50%;
+      width: 140px;
+      color: rgb(0, 0, 0);
+      font-size: 2em;
+  }
+
+  @media screen and (max-width: 1080px) {
+      .navbar {
+          margin: 0;
+          padding: 20px;
+      }
+
+      .bg-left {
+          min-height: 100%;
+      }
+
+      .row {
+
+          margin-top: 0px;
+      }
+
+      .weather-temp {
+          padding: -20px;
+      }
+
+      .bg-right {
+          height: auto;
+          background: url('images/mobil-bg.gif') center no-repeat;
+          background-size: cover;
+      }
+
+      .weather-info {
+          width: 90%;
+      }
+
+      .weather-info .row {
+          height: 500px;
+          background-color: rgb(189, 0, 148);
+          flex-direction: column;
+          align-items: center;
+      }
+
+      .weather-info img {
+          width: 100px;
+      }
+
+      .weather-col {
+          width: 100%;
+          height: fit-content;
+          margin-top: -50px;
+          padding: 50px;
+      }
+
+      .icon-container img {
+          width: 40px;
+          height: 40px;
+      }
+
+      .weather-temp {
+          margin-left: 0;
+      }
+
+      .weather-description {
+          text-align: center;
+      }
+
+      .weather-col h3 {
+          font-size: 1.2em;
+          /* Başlıkların mobilde daha iyi görünmesi için font boyutunu küçültüyoruz */
+      }
+
+      .weather-col p {
+          font-size: 1em;
+          /* Yazıların mobilde daha iyi görünmesi için font boyutunu küçültüyoruz */
+      }
+
+      #currentTemp {
+          font-size: 1em;
+      }
+  }
+
+  /* Modal Styles */
+  .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modal-content {
+      border-radius: 25px;
+      color: #000000;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 50%;
+  }
+
+  .close {
+      border-radius: 20px;
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+  }
+
+  .hourly-entry {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px;
+  }
+
+  .hourly-entry img {
+      width: 60px;
+      height: 60px;
+      padding: 10px;
+  }
+
+  .nokta:hover {
+      background-color: #ffffff00;
+      text-decoration: none;
+      color: #ffffff;
+      cursor: crosshair;
+  }
+
+  @keyframes hareket {
+      0% {
+          transform: scale(1);
+      }
+
+      50% {
+          transform: scale(1.2);
+      }
+
+      100% {
+          transform: scale(1);
+      }
+  }
+
+  .scroll-arrow-container {
+      display: none;
+      position: absolute;
+      bottom: 10px;
+      left: 45%;
+      transform: translateX(-50%);
+      z-index: 99;
+      animation: hareket 3s infinite;
+  }
+
+  .scroll-arrow {
+      background-color: #ffffff7a;
+      border: none;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      margin-bottom: 50px;
+
+  }
+
+  /* Show the arrow on mobile screens */
+  @media (max-width: 900px) {
+      .scroll-arrow-container {
+          display: block;
+      }
+  }
+
+  #cookieConsent {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      z-index: 1000;
+  }
+
+  #cookieConsent button {
+      background-color: #f1d600;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-left: 20px;
+  }
